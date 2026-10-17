@@ -21,5 +21,15 @@ export const metadata: Metadata = {
 
 export default function BarkingPage() {
   if (!sound) notFound();
-  return <SoundDetailLayout sound={sound} />;
+  return (
+    <SoundDetailLayout
+      sound={sound}
+      relatedBehaviorGuide={{
+        title: "Why Is My Dog Barking at Night?",
+        href: "/dog-behavior/barking-at-night",
+        description:
+          "Is your dog barking after dark? Discover the common triggers behind nocturnal barking, urgency levels, and practical calming solutions.",
+      }}
+    />
+  );
 }

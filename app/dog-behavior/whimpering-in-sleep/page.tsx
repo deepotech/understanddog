@@ -310,10 +310,10 @@ export default function WhimperingInSleepPage() {
               Explore our full Canine Whimpering Sound Guide &rarr;
             </Link>
             <Link
-              href="/dog-sounds/whining"
+              href="/dog-behavior/whining-at-night"
               className="hover:text-amber-800 font-medium underline"
             >
-              Learn about higher-frequency whines in the Whining Guide &rarr;
+              Dog awake and whining instead? Read our Dog Whining at Night Guide &rarr;
             </Link>
           </section>
         </div>

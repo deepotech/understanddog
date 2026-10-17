@@ -21,5 +21,15 @@ export const metadata: Metadata = {
 
 export default function WhiningPage() {
   if (!sound) notFound();
-  return <SoundDetailLayout sound={sound} />;
+  return (
+    <SoundDetailLayout
+      sound={sound}
+      relatedBehaviorGuide={{
+        title: "Dog Whining at Night: Causes and What to Do",
+        href: "/dog-behavior/whining-at-night",
+        description:
+          "Is your dog whining specifically during the night or bedtime? Read our behavioral guide covering nocturnal bathroom checks, crate acclimation, and senior cognitive care.",
+      }}
+    />
+  );
 }

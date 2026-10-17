@@ -320,10 +320,10 @@ export default function BarkingAtNightPage() {
               Explore our comprehensive Canine Barking Guide &rarr;
             </Link>
             <Link
-              href="/dog-bark-analyzer"
+              href="/dog-behavior/whining-at-night"
               className="hover:text-amber-800 font-medium underline"
             >
-              Learn about burst cadence in the Dog Bark Analyzer &rarr;
+              Dog whining or crying at night instead? Read our Whining at Night Guide &rarr;
             </Link>
           </section>
         </div>

@@ -15,11 +15,21 @@ import {
 } from "lucide-react";
 import { SITE_CONFIG } from "@/lib/config/site";
 
-interface SoundDetailLayoutProps {
-  sound: SoundGuide;
+export interface RelatedBehaviorGuide {
+  title: string;
+  href: string;
+  description: string;
 }
 
-export function SoundDetailLayout({ sound }: SoundDetailLayoutProps) {
+interface SoundDetailLayoutProps {
+  sound: SoundGuide;
+  relatedBehaviorGuide?: RelatedBehaviorGuide;
+}
+
+export function SoundDetailLayout({
+  sound,
+  relatedBehaviorGuide,
+}: SoundDetailLayoutProps) {
   const pageUrl = `${SITE_CONFIG.url}/dog-sounds/${sound.slug}`;
 
   // JSON-LD Schemas: Article + FAQPage (visible content only)
@@ -228,6 +238,30 @@ export function SoundDetailLayout({ sound }: SoundDetailLayoutProps) {
                 </h2>
               </div>
               <FaqAccordion items={sound.faqs} />
+            </section>
+          )}
+
+          {/* Related Behavioral Guide Callout */}
+          {relatedBehaviorGuide && (
+            <section className="bg-amber-50/70 border border-amber-200/90 rounded-2xl p-6 sm:p-7 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+              <div className="space-y-1">
+                <p className="text-xs font-bold uppercase tracking-wider text-amber-800">
+                  Related Behavioral Guide
+                </p>
+                <h3 className="text-lg font-serif font-bold text-stone-900">
+                  {relatedBehaviorGuide.title}
+                </h3>
+                <p className="text-xs sm:text-sm text-stone-600 max-w-xl leading-relaxed">
+                  {relatedBehaviorGuide.description}
+                </p>
+              </div>
+              <Link
+                href={relatedBehaviorGuide.href}
+                className="inline-flex items-center gap-1.5 rounded-xl bg-amber-800 px-4 py-2.5 text-xs font-semibold text-white shadow-xs hover:bg-amber-900 transition-colors flex-shrink-0"
+              >
+                <span>Read Behavioral Guide</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </Link>
             </section>
           )}
 
